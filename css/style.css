@@ -64,6 +64,7 @@ nav a{
 
 nav a:hover{
   text-decoration: underline;
+  
 }
 
   /* Requirement 2 code here - DONE*/
@@ -231,7 +232,7 @@ header{
   }
 
   .contact-image{
-    grid-column: 3 / span 5;
+    grid-column: 3 / span 2;
     
   }
 
