@@ -29,6 +29,7 @@ nav ul{
 nav li{
   display: inline;
   padding-right: 20px;
+  
 }
 
 nav{
@@ -51,20 +52,21 @@ footer{
   text-align: center;
 }
 
-
-
-
 /*****  End Starter Code ****/
 
 nav a{
   color: black;
   font-weight: bold;
-  /* Requirement 1 code here*/
+  text-decoration: none;
+  /* Requirement 1 code here - DONE*/
 }
 
-  /* Requirement 2 code here*/
 
+nav a:hover{
+  text-decoration: underline;
+}
 
+  /* Requirement 2 code here - DONE*/
 
 .skip a{
   background: white;
@@ -73,24 +75,32 @@ nav a{
   -webkit-transition: top 1s ease-out;
   transition: top 1s ease-out;
   z-index: 1;
-
-  /* Requirement 3a code here*/
+  position: absolute;
+  top: -40px;
+  /* Requirement 3a code here - DONE*/
   
 }
 
-/* Requirement 3b code here*/
+.skip a:focus{
+  position: static;
+}
+/* Requirement 3b code here - DONE*/
 
-
-/* Requirement 4 code here*/
-
-
+*:focus{
+  border: 2px solid;
+}
+/* Requirement 4 code here - DONE*/
 
 .container{
-  /* Requirement 5 code here*/
-
+    /* Requirement 5 code here - DONE*/
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-rows: auto auto auto auto auto;
+  row-gap: 15px;
 }
 
-/* Remainder of requirements here: */
+  /* Remainder of requirements here: */
+
 
 header{
   background-attachment: fixed; /* Parallax effect */
@@ -99,29 +109,71 @@ header{
   color: white;
   height: 400px; /* Parallax effect */
 
-  /* YOUR CODE HERE; */
+    /* YOUR CODE HERE; */
+  grid-column: 1 / -1;
+  grid-row: 1 / span 1;
+  background-image: url('../images/header.jpg');
+  background-repeat: no-repeat;
+
 }
 
 
 
 .about-image{
-  
+  grid-column: 1 / -1;
+  max-height: 700px;
+  grid-row: 2 / span 1;
+  overflow: hidden;
+    
 }
 
 .about{
- 
-}
-
-.method-image{
- 
-}
-
-.method{
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
   
 }
 
-/* You need to write some of your own selectors here */
+.method-image{
+  grid-column: 1 / -1;
+  max-height: 700px;
+  grid-row: 3 / span 1;
+  overflow: hidden;
+  
+}
 
+.method{
+  grid-column: 2 / span 1;
+  grid-row: 3 / span 1;
+    
+}
+
+  /* You need to write some of your own selectors here */
+.clients{
+  grid-column: 2 / span 1;
+  grid-row: 4 / span 1;
+
+}
+
+.clients-image{
+  grid-column: 1 / -1;
+  max-height: 700px;
+  grid-row: 4 / span 1;
+  overflow: hidden;
+
+
+}
+
+.contact{
+  grid-column: 2 / span 1;
+  grid-row: 5 / span 1;
+}
+
+.contact-image{
+  grid-column: 1 / -1;
+  max-height: 700px;
+  grid-row: 5 / span 1;
+  overflow: hidden;
+}
 
 
 .text-block{
@@ -129,56 +181,66 @@ header{
   border: 10px solid black;
   padding: 30px;
 
-  /* Your code here */
+    /* Your code here */
+  align-self: center;
 
 }
 
 @media screen and (min-width: 800px){
   nav{
     padding: 30px 0;
+    text-align: right;
 
     /* Your code here */
   }
 
   .container{
+    grid-template-columns: 50px auto 500px auto 50px;
+    grid-template-rows: 400px 400px 400px 400px 400px;
    
   }
 
-  
-
   .about-image{
+    grid-column: 2 / span 2;
   
   }
 
   .about{
+    grid-column: 3 / span 2;
     
   }
 
   .method-image{
+    grid-column: 3 / span 2;
     
   }
 
   .method{
+    grid-column: 2 / span 2;
    
   }
 
   .clients-image{
+    grid-column: 2 / span 2;
     
   }
 
   .clients{
+    grid-column: 3 / span 2;
     
   }
 
   .contact-image{
+    grid-column: 3 / span 5;
     
   }
 
   .contact{
+    grid-column: 2 / span 2;
     
   }
 
-}
+} 
 
 
 /** Code for prefers reduced motion **/
